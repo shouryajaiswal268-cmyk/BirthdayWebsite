@@ -1,0 +1,1115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday ✨</title>
+
+<style>
+/* =========================
+   GLOBAL DESIGN SYSTEM
+========================= */
+
+:root {
+    --bg: #080812;
+    --bg-light: #121222;
+    --pink: #ff6eb4;
+    --purple: #a78bfa;
+    --gold: #ffd88a;
+    --white: #ffffff;
+    --muted: #aaa9c3;
+    --glass: rgba(255,255,255,0.06);
+    --border: rgba(255,255,255,0.12);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: var(--bg);
+    color: var(--white);
+    overflow-x: hidden;
+}
+
+/* =========================
+   BACKGROUND
+========================= */
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -2;
+
+    background:
+        radial-gradient(circle at 20% 20%, #3c164b55, transparent 40%),
+        radial-gradient(circle at 80% 70%, #241b6955, transparent 40%),
+        linear-gradient(135deg, #080812, #111020, #080812);
+}
+
+#particles {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* =========================
+   TYPOGRAPHY
+========================= */
+
+h1, h2, h3 {
+    font-weight: 700;
+    letter-spacing: -1px;
+}
+
+.gradient-text {
+    background: linear-gradient(
+        120deg,
+        var(--pink),
+        var(--purple),
+        var(--gold)
+    );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+p {
+    color: var(--muted);
+    line-height: 1.8;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+button {
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+    transition: 0.3s ease;
+}
+
+.primary-btn {
+    padding: 15px 30px;
+    border-radius: 50px;
+
+    background: linear-gradient(
+        120deg,
+        var(--pink),
+        var(--purple)
+    );
+
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+
+    box-shadow: 0 0 30px #ff6eb444;
+}
+
+.primary-btn:hover {
+    transform: translateY(-4px) scale(1.03);
+    box-shadow: 0 0 45px #ff6eb477;
+}
+
+.secondary-btn {
+    background: var(--glass);
+    border: 1px solid var(--border);
+    color: white;
+
+    padding: 13px 25px;
+    border-radius: 50px;
+}
+
+/* =========================
+   HERO SECTION
+========================= */
+
+.hero {
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+    padding: 30px;
+    position: relative;
+}
+
+.hero-content {
+    max-width: 850px;
+    animation: fadeUp 1.2s ease;
+}
+
+.eyebrow {
+    color: var(--gold);
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    font-size: 12px;
+    margin-bottom: 25px;
+}
+
+.hero h1 {
+    font-size: clamp(45px, 9vw, 100px);
+    line-height: 1.05;
+    margin-bottom: 25px;
+}
+
+.hero p {
+    font-size: 18px;
+    max-width: 600px;
+    margin: auto auto 35px;
+}
+
+.scroll-indicator {
+    position: absolute;
+    bottom: 35px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: var(--muted);
+    font-size: 12px;
+    letter-spacing: 3px;
+    animation: float 2s infinite;
+}
+
+/* =========================
+   SECTIONS
+========================= */
+
+section:not(.hero) {
+    padding: 100px 25px;
+}
+
+.section-container {
+    max-width: 1100px;
+    margin: auto;
+    text-align: center;
+}
+
+.section-label {
+    color: var(--pink);
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 4px;
+    margin-bottom: 18px;
+}
+
+.section-title {
+    font-size: clamp(32px, 5vw, 55px);
+    margin-bottom: 25px;
+}
+
+.section-description {
+    max-width: 650px;
+    margin: auto auto 50px;
+}
+
+/* =========================
+   GLASS CARDS
+========================= */
+
+.glass-card {
+    background: var(--glass);
+    border: 1px solid var(--border);
+    border-radius: 25px;
+
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+
+    padding: 35px;
+
+    box-shadow: 0 20px 60px #00000022;
+}
+
+/* =========================
+   BIRTHDAY CAKE
+========================= */
+
+.cake-area {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 60px 0;
+}
+
+.cake {
+    position: relative;
+    width: 220px;
+    height: 190px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.cake:hover {
+    transform: scale(1.05);
+}
+
+.cake-base {
+    position: absolute;
+    bottom: 0;
+    width: 220px;
+    height: 100px;
+
+    background: linear-gradient(
+        to bottom,
+        #ff9ecb,
+        #e65b9c
+    );
+
+    border-radius: 15px 15px 25px 25px;
+    box-shadow: 0 20px 40px #ff6eb422;
+}
+
+.cake-top {
+    position: absolute;
+    bottom: 80px;
+    width: 220px;
+    height: 55px;
+
+    background: #ffc4df;
+    border-radius: 50%;
+}
+
+.cake-top::after {
+    content: "";
+    position: absolute;
+    bottom: -15px;
+    left: 0;
+    width: 220px;
+    height: 35px;
+
+    background: #ff9ecb;
+    border-radius: 0 0 50% 50%;
+}
+
+.candle {
+    position: absolute;
+    bottom: 135px;
+    left: 100px;
+
+    width: 20px;
+    height: 50px;
+
+    background: repeating-linear-gradient(
+        45deg,
+        white,
+        white 5px,
+        #ff6eb4 5px,
+        #ff6eb4 10px
+    );
+
+    border-radius: 5px;
+}
+
+.flame {
+    position: absolute;
+    top: -30px;
+    left: 3px;
+
+    width: 14px;
+    height: 25px;
+
+    background: radial-gradient(
+        ellipse at bottom,
+        #fff9b0,
+        #ffb347,
+        #ff6b00
+    );
+
+    border-radius: 50% 50% 50% 50%;
+    animation: flame 0.5s infinite alternate;
+    filter: drop-shadow(0 0 12px #ffb347);
+}
+
+.flame.off {
+    display: none;
+}
+
+/* =========================
+   MEMORIES
+========================= */
+
+.memory-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.memory-card {
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+    min-height: 280px;
+
+    background: linear-gradient(
+        135deg,
+        #291d3f,
+        #141426
+    );
+
+    border: 1px solid var(--border);
+    transition: 0.4s;
+}
+
+.memory-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 50px #a78bfa22;
+}
+
+.memory-image {
+    height: 220px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 60px;
+
+    background: radial-gradient(
+        circle,
+        #5e3d8066,
+        #121222
+    );
+}
+
+.memory-card p {
+    padding: 20px;
+    color: white;
+}
+
+/* =========================
+   LETTER
+========================= */
+
+.letter {
+    max-width: 750px;
+    margin: auto;
+    text-align: left;
+
+    position: relative;
+    overflow: hidden;
+}
+
+.letter::before {
+    content: "♡";
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    font-size: 100px;
+    color: #ff6eb411;
+}
+
+.letter p {
+    margin-bottom: 20px;
+    font-size: 17px;
+}
+
+.signature {
+    color: var(--pink);
+    font-size: 22px;
+    margin-top: 30px;
+}
+
+/* =========================
+   SURPRISE GIFT
+========================= */
+
+.gift {
+    font-size: 100px;
+    cursor: pointer;
+    display: inline-block;
+    margin: 30px;
+
+    animation: float 3s infinite;
+    transition: 0.3s;
+}
+
+.gift:hover {
+    transform: scale(1.15) rotate(10deg);
+}
+
+.surprise-message {
+    display: none;
+    margin-top: 30px;
+    animation: fadeUp 1s ease;
+}
+
+.surprise-message.show {
+    display: block;
+}
+
+.surprise-message h3 {
+    font-size: 35px;
+    margin-bottom: 20px;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    text-align: center;
+    padding: 60px 20px;
+    border-top: 1px solid var(--border);
+}
+
+footer p {
+    font-size: 13px;
+}
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+@keyframes flame {
+    from {
+        transform: scale(1) rotate(-5deg);
+    }
+
+    to {
+        transform: scale(1.15) rotate(5deg);
+    }
+}
+
+/* =========================
+   RESPONSIVE DESIGN
+========================= */
+
+@media (max-width: 768px) {
+
+    .memory-grid {
+        grid-template-columns: 1fr;
+    }
+
+    section:not(.hero) {
+        padding: 70px 20px;
+    }
+
+    .glass-card {
+        padding: 25px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<canvas id="particles"></canvas>
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <div class="eyebrow">
+            A Little Something Special ✨
+        </div>
+
+        <h1>
+            Happy Birthday<br>
+            <span class="gradient-text" id="personName">
+                Someone Special
+            </span>
+        </h1>
+
+        <p>
+            Today isn't just another day.
+            It's the day the world became a little more beautiful.
+            And I have something special to tell you.
+        </p>
+
+        <button class="primary-btn" onclick="startJourney()">
+            Begin Your Surprise ✨
+        </button>
+
+    </div>
+
+    <div class="scroll-indicator">
+        SCROLL TO EXPLORE ↓
+    </div>
+
+</section>
+
+<!-- =========================
+     BIRTHDAY CAKE
+========================= -->
+
+<section id="cakeSection">
+
+    <div class="section-container">
+
+        <div class="section-label">
+            Make A Wish
+        </div>
+
+        <h2 class="section-title">
+            A Wish Just For You 🎂
+        </h2>
+
+        <p class="section-description">
+            Every candle represents a beautiful dream.
+            Click the cake to blow out the candle
+            and make your birthday wish.
+        </p>
+
+        <div class="cake-area">
+
+            <div class="cake" onclick="blowCandle()">
+
+                <div class="cake-base"></div>
+
+                <div class="cake-top"></div>
+
+                <div class="candle">
+
+                    <div class="flame" id="flame"></div>
+
+                </div>
+
+            </div>
+
+            <p id="cakeMessage">
+                Tap the cake to make a wish 💫
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =========================
+     MEMORIES
+========================= -->
+
+<section id="memories">
+
+    <div class="section-container">
+
+        <div class="section-label">
+            Beautiful Moments
+        </div>
+
+        <h2 class="section-title">
+            Little Moments,<br>
+            <span class="gradient-text">
+                Big Memories
+            </span>
+        </h2>
+
+        <p class="section-description">
+            Some moments become memories.
+            Some memories become stories.
+            And some people make every moment special.
+        </p>
+
+        <div class="memory-grid">
+
+            <div class="memory-card">
+
+                <div class="memory-image">
+                    🌸
+                </div>
+
+                <p>
+                    The moments that made us smile.
+                </p>
+
+            </div>
+
+            <div class="memory-card">
+
+                <div class="memory-image">
+                    🌙
+                </div>
+
+                <p>
+                    The conversations I'll always remember.
+                </p>
+
+            </div>
+
+            <div class="memory-card">
+
+                <div class="memory-image">
+                    💫
+                </div>
+
+                <p>
+                    The little things that mean everything.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =========================
+     HEARTFELT LETTER
+========================= -->
+
+<section id="letterSection">
+
+    <div class="section-container">
+
+        <div class="section-label">
+            From My Heart
+        </div>
+
+        <h2 class="section-title">
+            A Letter For You 💌
+        </h2>
+
+        <div class="glass-card letter">
+
+            <p>
+                Dear <span id="letterName">Someone Special</span>,
+            </p>
+
+            <p>
+                On your special day, I just want you to know
+                how genuinely wonderful you are.
+            </p>
+
+            <p>
+                You have this beautiful way of making ordinary
+                moments feel special. Your smile, your kindness,
+                and the little things you do make a difference
+                in ways you might never realize.
+            </p>
+
+            <p>
+                I hope this new chapter of your life brings you
+                endless happiness, beautiful surprises,
+                peaceful days, and dreams that come true.
+            </p>
+
+            <p>
+                No matter where life takes you, I hope you
+                always remember that you deserve all the
+                beautiful things this world has to offer.
+            </p>
+
+            <p>
+                Keep smiling. Keep shining.
+                And never stop being the amazing person you are.
+            </p>
+
+            <div class="signature">
+                With lots of love ♡
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =========================
+     SURPRISE
+========================= -->
+
+<section id="surpriseSection">
+
+    <div class="section-container">
+
+        <div class="section-label">
+            One Last Surprise
+        </div>
+
+        <h2 class="section-title">
+            There's Something<br>
+            <span class="gradient-text">
+                Just For You
+            </span>
+        </h2>
+
+        <p class="section-description">
+            A little gift, wrapped with love.
+            Tap to open it.
+        </p>
+
+        <div class="gift" onclick="openGift()" id="gift">
+            🎁
+        </div>
+
+        <div class="surprise-message" id="surpriseMessage">
+
+            <h3 class="gradient-text">
+                You Are Truly Special ♡
+            </h3>
+
+            <p>
+                May your life be filled with laughter,
+                love, adventure, and beautiful memories.
+            </p>
+
+            <p>
+                Happy Birthday! 🎂✨
+            </p>
+
+            <br>
+
+            <button class="primary-btn" onclick="celebrate()">
+                Celebrate Again 🎉
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    <p>
+        Made with love, just for you ♡
+    </p>
+
+    <p style="margin-top: 10px;">
+        Happy Birthday ✨
+    </p>
+
+</footer>
+
+<!-- =========================
+     JAVASCRIPT
+========================= -->
+
+<script>
+
+/* =========================
+   PERSONALIZATION
+========================= */
+
+// Change this name
+const birthdayPerson = "Beautiful Soul";
+
+document.getElementById("personName").textContent =
+    birthdayPerson;
+
+document.getElementById("letterName").textContent =
+    birthdayPerson;
+
+
+/* =========================
+   START JOURNEY
+========================= */
+
+function startJourney() {
+
+    document.getElementById("cakeSection")
+        .scrollIntoView({
+            behavior: "smooth"
+        });
+
+}
+
+
+/* =========================
+   BLOW CANDLE
+========================= */
+
+let candleBlown = false;
+
+function blowCandle() {
+
+    const flame = document.getElementById("flame");
+    const message = document.getElementById("cakeMessage");
+
+    if (!candleBlown) {
+
+        flame.classList.add("off");
+
+        message.innerHTML =
+            "Your wish is on its way to the universe ✨";
+
+        candleBlown = true;
+
+        createConfetti();
+
+    } else {
+
+        flame.classList.remove("off");
+
+        message.innerHTML =
+            "Make another beautiful wish 💫";
+
+        candleBlown = false;
+
+    }
+
+}
+
+
+/* =========================
+   OPEN GIFT
+========================= */
+
+let giftOpened = false;
+
+function openGift() {
+
+    const gift = document.getElementById("gift");
+    const message = document.getElementById("surpriseMessage");
+
+    if (!giftOpened) {
+
+        gift.innerHTML = "💝";
+
+        message.classList.add("show");
+
+        giftOpened = true;
+
+        createConfetti();
+
+    }
+
+}
+
+
+/* =========================
+   CONFETTI
+========================= */
+
+function createConfetti() {
+
+    const emojis = [
+        "🎉",
+        "✨",
+        "💖",
+        "🎂",
+        "🌸",
+        "💫"
+    ];
+
+    for (let i = 0; i < 60; i++) {
+
+        const confetti = document.createElement("div");
+
+        confetti.innerHTML =
+            emojis[Math.floor(Math.random() * emojis.length)];
+
+        confetti.style.position = "fixed";
+
+        confetti.style.left =
+            Math.random() * 100 + "vw";
+
+        confetti.style.top = "-30px";
+
+        confetti.style.fontSize =
+            Math.random() * 20 + 15 + "px";
+
+        confetti.style.zIndex = "9999";
+
+        confetti.style.pointerEvents = "none";
+
+        document.body.appendChild(confetti);
+
+        const duration =
+            Math.random() * 3 + 2;
+
+        confetti.animate(
+            [
+                {
+                    transform: "translateY(0) rotate(0deg)",
+                    opacity: 1
+                },
+
+                {
+                    transform:
+                        `translateY(110vh) rotate(720deg)`,
+                    opacity: 0
+                }
+            ],
+            {
+                duration: duration * 1000,
+                easing: "ease-out"
+            }
+        );
+
+        setTimeout(() => {
+            confetti.remove();
+        }, duration * 1000);
+
+    }
+
+}
+
+
+/* =========================
+   CELEBRATION
+========================= */
+
+function celebrate() {
+
+    createConfetti();
+
+}
+
+
+/* =========================
+   ANIMATED PARTICLES
+========================= */
+
+const canvas = document.getElementById("particles");
+const ctx = canvas.getContext("2d");
+
+let particles = [];
+
+function resizeCanvas() {
+
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+}
+
+window.addEventListener("resize", resizeCanvas);
+
+resizeCanvas();
+
+class Particle {
+
+    constructor() {
+
+        this.x = Math.random() * canvas.width;
+        this.y = Math.random() * canvas.height;
+
+        this.size = Math.random() * 2 + 0.5;
+
+        this.speedX =
+            (Math.random() - 0.5) * 0.4;
+
+        this.speedY =
+            (Math.random() - 0.5) * 0.4;
+
+        this.opacity =
+            Math.random() * 0.5 + 0.2;
+
+    }
+
+    update() {
+
+        this.x += this.speedX;
+        this.y += this.speedY;
+
+        if (this.x < 0 || this.x > canvas.width) {
+            this.speedX *= -1;
+        }
+
+        if (this.y < 0 || this.y > canvas.height) {
+            this.speedY *= -1;
+        }
+
+    }
+
+    draw() {
+
+        ctx.beginPath();
+
+        ctx.arc(
+            this.x,
+            this.y,
+            this.size,
+            0,
+            Math.PI * 2
+        );
+
+        ctx.fillStyle =
+            `rgba(255, 255, 255, ${this.opacity})`;
+
+        ctx.fill();
+
+    }
+
+}
+
+function initParticles() {
+
+    particles = [];
+
+    for (let i = 0; i < 100; i++) {
+
+        particles.push(new Particle());
+
+    }
+
+}
+
+function animateParticles() {
+
+    ctx.clearRect(
+        0,
+        0,
+        canvas.width,
+        canvas.height
+    );
+
+    particles.forEach(particle => {
+
+        particle.update();
+        particle.draw();
+
+    });
+
+    requestAnimationFrame(animateParticles);
+
+}
+
+initParticles();
+animateParticles();
+
+</script>
+
+</body>
+</html>
